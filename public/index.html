@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>LightPicture</title>
+  <script>
+    (function () {
+
+      if (!sessionStorage.length) {
+        // 这个调用能触发目标事件，从而达到共享数据的目的
+        localStorage.setItem('getSessionStorage', Date.now());
+      };
+
+      // 该事件是核心
+      window.addEventListener('storage', function (event) {
+        if (event.key == 'getSessionStorage') {
+          // 已存在的标签页会收到这个事件
+          localStorage.setItem('sessionStorage', JSON.stringify(sessionStorage));
+          localStorage.removeItem('sessionStorage');
+
+        } else if (event.key == 'sessionStorage' && !sessionStorage.length) {
+          // 新开启的标签页会收到这个事件
+          var data = JSON.parse(event.newValue),
+            value;
+
+          for (key in data) {
+            sessionStorage.setItem(key, data[key]);
+          }
+        }
+      });
+    })();
+    console.log(
+      "%cLightPicture",
+      "font-size: 50px;background: #EEE url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAAHklEQVQImWNkYGBgYGD4//8/A5wF5SBYyAr+//8PAPOCFO0Q2zq7AAAAAElFTkSuQmCC) repeat; text-shadow: 5px -5px black, 4px -4px white;  font-weight: bold;  -webkit-text-fill-color: transparent;  -webkit-background-clip: text;"
+    );
+    console.log(
+      "%c%s",
+      "color: blue; font-size: 16px;",
+      "作者邮箱admin@osuu.net \n\n你可以通过 https://www.osuu.net 了解我们 "
+    );
+  </script>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but admin doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+
+</body>
+
+</html>

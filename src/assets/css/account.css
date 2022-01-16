@@ -1,0 +1,144 @@
+.login_bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(34, 42, 62, 0.3);
+  background-position: 50%;
+  background-size: 100%;
+}
+.login_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1100px;
+  margin: 0 auto;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+.login_body {
+  width: inherit;
+  display: flex;
+  box-shadow: 0px 20px 80px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+.login-sidebox {
+  width: 50%;
+  padding: 60px;
+  color: #fff;
+  background: #3887e5;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 10px 10px 0;
+}
+.login-sidebox__title h2 {
+  font-size: 30px;
+}
+.login-sidebox__title h4 {
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: normal;
+}
+.login-sidebox__title p {
+  font-size: 14px;
+  margin-top: 10px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.6);
+}
+.login-sidebox img {
+  position: absolute;
+  left: -120px;
+  bottom: -160px;
+  width: 550px;
+}
+.login-logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.login-logo .logo {
+  width: 100px;
+  margin: 0 auto;
+  vertical-align: bottom;
+}
+.login-logo h2 {
+  font-size: 24px;
+  margin-top: 20px;
+  color: #40485b;
+}
+.login-title {
+  margin-top: 20px;
+}
+.login-title h2 {
+  font-size: 22px;
+  font-weight: normal;
+}
+.login-title p {
+  font-size: 12px;
+  margin-top: 40px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+}
+.login-form {
+  width: 50%;
+  padding: 60px 100px;
+  background: #fff;
+  border-radius: 10px 0 0 10px;
+}
+.ivu-login {
+  margin-bottom: 30px;
+}
+.ivu-login .page-account-auto-login {
+  margin-bottom: 24px;
+  text-align: left;
+}
+.ivu-login .page-account-auto-login .line {
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  background: #999;
+}
+.copy {
+  text-align: center;
+  color: #999;
+}
+@media (max-height: 650px) {
+  .login_container {
+    position: static;
+    transform: none;
+    margin: 50px auto;
+  }
+}
+@media (max-width: 1200px) {
+  .login_container {
+    width: 900px;
+  }
+  .login-form {
+    padding: 60px;
+  }
+}
+@media (max-width: 1000px) {
+  .login_container {
+    width: 100%;
+    background: #fff;
+    margin: 0;
+    transform: none;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+  }
+  .login_body {
+    box-shadow: none;
+  }
+  .login-form {
+    width: 100%;
+    padding: 60px 40px;
+  }
+  .login-sidebox {
+    display: none;
+  }
+  .login-footer {
+    margin-top: 0;
+  }
+}
