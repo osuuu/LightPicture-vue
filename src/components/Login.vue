@@ -1,3 +1,16 @@
+<!-- 
+// +----------------------------------------------------------------------
+// | LightPicture [ 图床 ]
+// +----------------------------------------------------------------------
+// | 企业团队图片资源管理系统
+// +----------------------------------------------------------------------
+// | Github: https://github.com/osuuu/LightPicture
+// +----------------------------------------------------------------------
+// | Copyright © http://picture.h234.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Author: Team <admin@osuu.net>
+// +---------------------------------------------------------------------- 
+-->
 <template>
   <div class="page-container">
     <div class="page-close" @click="switchAccount(0)">
@@ -21,7 +34,8 @@
 
         <FormItem>
           <Checkbox v-model="formValidate.single" style="float: left">记住我</Checkbox>
-          <a href="javascript:;" style="float: right;margin-left:10px" v-if="config.is_reg == 1" @click="switchAccount(2)">注册账号</a> 
+          <a href="javascript:;" style="float: right;margin-left:10px" v-if="config.is_reg == 1"
+            @click="switchAccount(2)">注册账号</a>
           <a href="javascript:;" style="float: right" @click="switchAccount(3)">忘记密码</a>
           <div style="clear: both"></div>
         </FormItem>
@@ -70,9 +84,9 @@
     },
     created() {
       if (cookie.getCookie()) {
-        this.username = cookie.getCookie().username;
-        this.password = cookie.getCookie().password;
-        this.single = cookie.get("single");
+        this.formValidate.username = cookie.getCookie().username;
+        this.formValidate.password = cookie.getCookie().password;
+        this.formValidate.single = cookie.get("single");
       }
     },
 
