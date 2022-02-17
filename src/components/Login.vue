@@ -84,7 +84,9 @@
     },
     created() {
       if (cookie.getCookie()) {
-        this.formValidate.username = cookie.getCookie().username;
+        if (cookie.getCookie().username != null && cookie.getCookie().username != 'undefined') {
+          this.formValidate.username = cookie.getCookie().username;
+        }
         this.formValidate.password = cookie.getCookie().password;
         this.formValidate.single = cookie.get("single");
       }

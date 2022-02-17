@@ -49,11 +49,11 @@
 
               <FormItem label="角色权限">
                 <Tag color="blue" v-if="formValidate.role.is_admin">管理员</Tag>
-                <Tag color="blue" v-if="formValidate.role.is_add">上传图片</Tag>
-                <Tag color="blue" v-if="formValidate.role.is_del_own">删除自己上传的图片</Tag>
-                <Tag color="blue" v-if="formValidate.role.is_read">查看所在存储桶其他人上传的图片</Tag>
-                <Tag color="blue" v-if="formValidate.role.is_del_all">删除所在存储桶其他人上传的图片</Tag>
-                <Tag color="blue" v-if="formValidate.role.is_read_all">查看系统全部图片</Tag>
+                <Tag color="blue" v-if="!formValidate.role.is_admin && formValidate.role.is_add">上传图片</Tag>
+                <Tag color="blue" v-if="!formValidate.role.is_admin && formValidate.role.is_del_own">删除自己上传的图片</Tag>
+                <Tag color="blue" v-if="!formValidate.role.is_admin && formValidate.role.is_read">查看所在存储桶其他人上传的图片</Tag>
+                <Tag color="blue" v-if="!formValidate.role.is_admin && formValidate.role.is_del_all">删除所在存储桶其他人上传的图片</Tag>
+                <Tag color="blue" v-if="!formValidate.role.is_admin && formValidate.role.is_read_all">查看系统全部图片</Tag>
               </FormItem>
 
 

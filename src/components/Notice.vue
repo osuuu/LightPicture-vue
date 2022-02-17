@@ -17,10 +17,7 @@
       <div class="geek-notice-main">
         <div class="geek-notice-cont">
           <div class="geek-notice-cont-title">上传中 {{success}}/{{all}}</div>
-          <div class="geek-notice-cont-html">
-
-          </div>
-
+          <div class="geek-notice-cont-html"></div>
           <Progress :percent="(success/all)*100" :stroke-color="['#108ee9', '#87d068']" />
 
         </div>
