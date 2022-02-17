@@ -57,7 +57,13 @@
               <Icon custom="osuu-net geek-github" size="26"></Icon>
             </div>
           </div>
-
+          <div class="d-flex align-items-center" v-if="update">
+            <div class="dropdown d-inline-block" @click="$router.push('/update')">
+              <Tooltip content="版本更新" placement="bottom">
+                <Icon custom="osuu-net geek-iconfontzhizuobiaozhun0254" size="26"></Icon>
+              </Tooltip>
+            </div>
+          </div>
 
           <div class="d-flex align-items-center">
 
@@ -73,7 +79,6 @@
       </header>
 
       <div class="main-content">
-
         <router-view></router-view>
       </div>
     </div>
@@ -92,7 +97,7 @@
         menuItem: [],
         activeName: "",
         openItem: ["setup"],
-        mobileMenu: false,
+        update: false
       };
     },
     computed: {
@@ -101,7 +106,7 @@
 
     methods: {
       ...mapMutations(["switchAccount"]),
-      toGit(){
+      toGit() {
         window.open('https://github.com/osuuu/LightPicture');
       },
     },
@@ -116,7 +121,9 @@
       // 监听路由刷新
       $route: {
         handler: function (val, oldVal) {
-          this.mobileMenu = false;
+          if (this.isMobile) {
+            this.$store.state.isMenu = false;
+          }
         },
         // 深度观察监听
         deep: true,
@@ -124,6 +131,7 @@
       userInfo: {
         handler: function (val, oldVal) {
           if (this.userInfo.role.is_admin == 1) {
+            this.update = true
             this.menuItem[3]['children'][4]['meta']['isShow'] = true
           } else {
             if (this.config.is_show_storage == 0) {

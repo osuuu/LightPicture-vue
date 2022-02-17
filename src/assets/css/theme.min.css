@@ -221,7 +221,7 @@ li.mm-active>a {
 
 @media (max-width: 992px) {
     .vertical-menu {
-        /* display: none */
+        top:15px!important;
     }
 
     .enable-vertical-menu .menu-overlay {
@@ -285,7 +285,7 @@ li.mm-active>a {
     top: 0;
     right: 0;
     left: 0;
-    z-index: 1001
+    z-index: 1000
 }
 
 .navbar-header {

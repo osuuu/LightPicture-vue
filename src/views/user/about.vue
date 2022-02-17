@@ -21,7 +21,7 @@
             <Alert type="success">
               LightPicture
               <span slot="desc">
-                <Tag color="success">当前版本：{{version}} （{{time}}）</Tag>
+                <Tag color="success">当前版本：{{config.version}} （{{config.time}}）</Tag>
                 <p>一套轻量级企业团队图片资源管理系统、图床系统</p>
                 <p>2021年底，苦于创作时没有一款方便快捷且适合需求的图床，在自己折腾下开发了LightPicture，本系统遵循GPL 3.0开源许可</p>
                 <p>如果您认可我的作品，请为我点击一个star，你的支持也将帮助LightPicture变的更好</p>
@@ -42,12 +42,17 @@
 </template>
 
 <script>
+import {
+    mapState,
+  } from 'vuex'
   export default {
     data() {
       return {
-        version: process.env.VUE_APP_VERSION,
-        time: process.env.VUE_APP_UPDATE_TIME,
+        
       };
+    },
+    computed: {
+      ...mapState(['config']),
     },
 
 

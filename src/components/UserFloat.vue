@@ -36,6 +36,12 @@
             关于系统
           </div>
         </DropdownItem>
+        <DropdownItem v-if="userInfo.role.is_admin == 1">
+          <div @click="$router.push('/update')" class="right-btn">
+            <span class="osuu-net geek-iconfontzhizuobiaozhun0254"></span>
+            检测更新
+          </div>
+        </DropdownItem>
         <DropdownItem divided>
           <div @click="exit">
             <span class="osuu-net geek-zhuxiaodenglu"></span>

@@ -1,14 +1,7 @@
-// +----------------------------------------------------------------------
-// | LightPicture [ 图床 ]
-// +----------------------------------------------------------------------
-// | 企业团队图片资源管理系统
-// +----------------------------------------------------------------------
-// | Github: https://github.com/osuuu/LightPicture
-// +----------------------------------------------------------------------
-// | Copyright © http://picture.h234.cn All rights reserved.
-// +----------------------------------------------------------------------
-// | Author: Team <admin@osuu.net>
-// +----------------------------------------------------------------------
+/**
+ * 前台接口
+ * 2021.04.15
+ */
 
 import request from '@/utils/request'
 
@@ -370,7 +363,27 @@ import request from '@/utils/request'
 }
 
 
+/**
+ * 获取更新
+ */
+ export function getUpdate() {
+  return request({
+    url: '/updade/version',
+    method: 'get',
+  })
+}
 
+/**
+ * 下载更新包
+ * @param {array} data 请求数据
+ */
+ export function postUpdate(data) {
+  return request({
+    url: '/updade/update',
+    method: 'post',
+    data
+  })
+}
 
 
 

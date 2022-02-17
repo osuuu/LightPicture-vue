@@ -52,6 +52,7 @@
                   <FormItem>
                     <Button type="primary" @click="Save(emailList)" :loading="creating">保存</Button>
                     <Button type="warning" @click="sendTest" :loading="creating2">发送测试邮件</Button>
+                    <p style="font-size:12px;color:#999">* 发送测试邮件会发送至当前登录用户的邮箱，请确保当前登录用户的账号为邮箱格式</p>
                   </FormItem>
                 </Form>
               </TabPane>

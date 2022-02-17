@@ -146,6 +146,16 @@ const frameIn = [{
                 isShow: false
             }
         },
+        {
+            path: 'update',
+            name: 'update',
+            component: () => import("@/views/user/update.vue"),
+            meta: {
+                ...meta,
+                title: '系统更新',
+                isShow: false
+            }
+        },
 
     ]
 },

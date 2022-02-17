@@ -62,5 +62,5 @@
 </script>
 
 <style>
-  @import url("//at.alicdn.com/t/font_3014911_7ludbk3wejq.css");
+  @import url("//at.alicdn.com/t/font_3014911_g2wefaq6i96.css");
 </style>

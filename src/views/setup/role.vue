@@ -24,8 +24,9 @@
             </div>
           </div>
           <div class="card-body padding-top0">
-            <div class="card-menu" >
-              <Button v-if="userInfo.role.is_admin == 1" type="primary" icon="md-add" @click="addClick" style="margin-right: 10px">新增</Button>
+            <div class="card-menu">
+              <Button v-if="userInfo.role.is_admin == 1" type="primary" icon="md-add" @click="addClick"
+                style="margin-right: 10px">新增</Button>
             </div>
             <Table border :loading="load" :columns="columns" :data="data">
               <template slot-scope="{ row }" slot="power">
@@ -199,7 +200,7 @@
     created() {
       this._getData();
       this._getStorage();
-      if(this.userInfo.role.is_admin != 1){
+      if (this.userInfo.role.is_admin != 1) {
         this.columns.pop()
         this.columns.pop()
       }
@@ -337,7 +338,7 @@
               content: res.msg,
             });
             this.modal2 = false;
-            this._getData();
+
           } else {
             this.$Message.error({
               background: true,
@@ -345,6 +346,7 @@
             });
             this.load = false
           }
+          this._getData();
           this.nextTick()
         });
       },

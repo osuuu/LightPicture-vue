@@ -171,7 +171,7 @@
       //  上传成功钩子
       onSuccess(res, file, fileList) {
         if (res.code == 200) {
-          this.imgList.push(res.data)
+          this.imgList.unshift(res.data)
           this.imgClick(res.data)
 
           this.success++
